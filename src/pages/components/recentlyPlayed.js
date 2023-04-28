@@ -95,7 +95,7 @@ const RecentlyPlayed = props => {
             grid-template-columns: repeat(15, 1fr);
             overflow-y: hidden;
             overflow-x: scroll;
-            width: 100%;
+            width: 100vw;
             
             scroll-snap-type: x mandatory;
           }

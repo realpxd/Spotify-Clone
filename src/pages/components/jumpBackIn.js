@@ -47,7 +47,6 @@ const JumpBackIn = props => {
                 padding: 1.3rem 1rem 1rem 1rem;
                 border-radius: 0.5rem;
                 margin: 1em;
-                margin-bottom: 1em;
                 height: 19rem;
                 width: 12rem;
                 text-align: left;
@@ -56,9 +55,7 @@ const JumpBackIn = props => {
                 background: rgba(255, 255, 255, 0.05);
                 // box-shadow: 0 8px 10px 0 rgba( 31, 38, 135, 0.37 );
                 backdrop-filter: blur(4px);
-
-              }
-@media  screen and (max-width:768px) {
+              
                 -webkit-backdrop-filter: blur(4px);
                 border-radius: 10px;
                 border: 1px solid rgba(255, 255, 255, 0.04);
@@ -106,7 +103,7 @@ const JumpBackIn = props => {
             grid-template-columns: repeat(15, 1fr);
             overflow-y: hidden;
             overflow-x: scroll;
-            width: 100%;
+            width: 100vw;
             scroll-snap-type: x mandatory;
           }
           .blockData::-webkit-scrollbar {
