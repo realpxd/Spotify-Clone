@@ -4,23 +4,25 @@ import { useRef } from 'react'
 
 const JumpBackIn = props => {
   const auData = [
-    'Ram_Siya_Ram',
-    'Shree_Hanuan_Chalisa',
-    'Shiv_Dhun',
-    'Hare_Ram_Hare_Krishna',
-    'Sankat_Mochan_Hanuman',
-    'Ram_Darshan',
-    'Teri_Bandagi',
-    'Jai_Jai_Naryana',
+    'Changes',
+    'Hope',
+    'Exbitch',
+    'BadVibes',
+    'Remedy',
+    'Moonlight',
+    'Numb',
+    'KillVibe'
   ]
 
   const audioBlocks = auData.map((data, index) => {
+
     return (
       <>
-        <div key={data} className='blockCont'>
+        <div key={data} className='blockCont' onClick={() => props.sapR(auData, 'playlist1')}>
           <div
             className='block'
-            onClick={() => props.sap(data, auData, index)}
+            id={data}
+            onClick={() => props.sap(data, auData, index, 'playlist2')}
           >
             <Image
               style={{
@@ -30,7 +32,7 @@ const JumpBackIn = props => {
                 boxSizing: 'border-box'
               }}
               className='blockImg'
-              src={`/img/playlist1/${data}.jpg`}
+              src={`/img/playlist2/${data}.webp`}
               width='140'
               height='150'
               alt={data}
@@ -47,33 +49,24 @@ const JumpBackIn = props => {
                 padding: 1.3rem 1rem 1rem 1rem;
                 border-radius: 0.5rem;
                 margin: 1em;
+                margin-bottom: 1em;
                 height: 19rem;
                 width: 12rem;
                 text-align: left;
                 scroll-snap-align: center;
 
-                background: rgba(255, 255, 255, 0.05);
+                background: rgba(150, 150, 150, 0.05);
                 // box-shadow: 0 8px 10px 0 rgba( 31, 38, 135, 0.37 );
                 backdrop-filter: blur(4px);
-              
                 -webkit-backdrop-filter: blur(4px);
                 border-radius: 10px;
-                border: 1px solid rgba(255, 255, 255, 0.04);
+                border: 1px solid rgba(100, 100, 100, 0.04);
               }
               .block:is(:hover , :focus){
-                background: rgba(255, 255, 255, 0.134);
+                background: rgba(150, 150, 150, 0.134);
                 transition: all 0.1s ease-in-out;
               }
               .block h3 {
-                font-weight: 600;
-                wdith: 100%;
-                white-space: nowrap; 
-
-                -webkit-box-orient: vertical;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                
-                white-space: nowrap; 
               }
               .block p {
                 color: grey;
@@ -104,10 +97,15 @@ const JumpBackIn = props => {
             overflow-y: hidden;
             overflow-x: scroll;
             width: 100vw;
+            
             scroll-snap-type: x mandatory;
           }
           .blockData::-webkit-scrollbar {
             display: none;
+          }
+          .blockCont {
+            
+            cursor: pointer;
           }
         `}
       </style>

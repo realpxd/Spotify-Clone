@@ -4,24 +4,39 @@ import { useRef } from 'react'
 
 const RecentlyPlayed = props => {
   const auData = [
-    'Changes',
-    'Hope',
-    'Exbitch',
-    'BadVibes',
-    'Remedy',
-    'Moonlight',
-    'Numb',
-    'KillVibe'
+    'Ram Siya Ram',
+    'भए प्रगट कृपाला',
+    'सारे जहाँ के मालिक',
+    'Hare Ram Hare Krishan',
+    'Sankat Mochan Hanuman',
+    'Ram Darshan',
+    'तेरी बंदगी से पहले',
+    'Jai Jai Narayan',
   ]
 
+  let currentSongFile, songsQueue = [];
+  let imgSrcGlobal;
+
   const audioBlocks = auData.map((data, index) => {
+
+
+    // console.log(sapReturn(data, auData, index , 'playlist1'))
+
+    //   let a = 0;
+    //   setInterval(() => {
+    //   console.log("songsQueue : " + imgSrcGlobal + " : " + ++a);
+    // }, 2000);
+
+
     return (
       <>
-        <div key={data} className='blockCont'>
+        <div key={data} className='blockCont' onClick={() => props.sapR(auData, 'playlist1')}>
           <div
             className='block'
-            id={data}
-            onClick={() => props.sap(data, auData, index)}
+            onClick={() => {
+              props.sap(data, auData, index, 'playlist1');
+              // props.sapInd(index , 'playlist1' , data);
+            }}
           >
             <Image
               style={{
@@ -31,7 +46,7 @@ const RecentlyPlayed = props => {
                 boxSizing: 'border-box'
               }}
               className='blockImg'
-              src={`/img/playlist2/${data}.webp`}
+              src={`/img/playlist1/${data}.jpg`}
               width='140'
               height='150'
               alt={data}
@@ -48,24 +63,33 @@ const RecentlyPlayed = props => {
                 padding: 1.3rem 1rem 1rem 1rem;
                 border-radius: 0.5rem;
                 margin: 1em;
-                margin-bottom: 1em;
                 height: 19rem;
                 width: 12rem;
                 text-align: left;
                 scroll-snap-align: center;
 
-                background: rgba(255, 255, 255, 0.05);
+                background: rgba(150, 150, 150, 0.05);
                 // box-shadow: 0 8px 10px 0 rgba( 31, 38, 135, 0.37 );
                 backdrop-filter: blur(4px);
+              
                 -webkit-backdrop-filter: blur(4px);
                 border-radius: 10px;
-                border: 1px solid rgba(255, 255, 255, 0.04);
+                border: 1px solid rgba(100, 100, 100, 0.04);
               }
               .block:is(:hover , :focus){
-                background: rgba(255, 255, 255, 0.134);
+                background: rgba(150, 150, 150, 0.134);
                 transition: all 0.1s ease-in-out;
               }
               .block h3 {
+                font-weight: 600;
+                wdith: 100%;
+                white-space: nowrap; 
+
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                
+                white-space: nowrap; 
               }
               .block p {
                 color: grey;
@@ -96,11 +120,13 @@ const RecentlyPlayed = props => {
             overflow-y: hidden;
             overflow-x: scroll;
             width: 100vw;
-            
             scroll-snap-type: x mandatory;
           }
           .blockData::-webkit-scrollbar {
             display: none;
+          }
+          .blockCont{
+            cursor: pointer;
           }
         `}
       </style>
