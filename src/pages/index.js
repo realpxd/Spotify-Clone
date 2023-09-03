@@ -5,9 +5,9 @@ import styles from '@/styles/Home.module.css'
 import { useState, useRef } from 'react';
 
 import Link from 'next/link'
-import HeaderBlocks from './components/headerBlocks'
-import JumpBackIn from './components/RecentlyPlayed'
-import RecentlyPlayed from './components/JumpBackIn'
+import HeaderBlocks from './components/headerBlocks.js'
+import JumpBackIn from './components/RecentlyPlayed.js'
+import RecentlyPlayed from './components/JumpBackIn.js'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useRouter } from "next/router";
 // import Temp from './components/Header'

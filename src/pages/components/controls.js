@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import styles from '@/styles/Home.module.css'
 import { useState, useRef } from 'react';
-import JumpBackIn from './RecentlyPlayed'
+import JumpBackIn from './RecentlyPlayed.js'
 
 
 const controls = () => {
